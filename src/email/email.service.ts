@@ -1,12 +1,11 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateEmailDto } from './dto/create-email.dto.js';
-import { UpdateEmailDto } from './dto/update-email.dto.js';
-import { MailerService } from '@nestjs-modules/mailer';
+import { MailService } from '../mail/mail.service.js';
 
 @Injectable()
 export class EmailService {
   constructor(
-    private readonly mailerService: MailerService,
+    private readonly mailerService: MailService,
   ) { }
   async create(createEmailDto: CreateEmailDto) {
     try {
