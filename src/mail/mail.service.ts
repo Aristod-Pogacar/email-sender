@@ -21,7 +21,7 @@ export class MailService {
 
     async sendMail(createEmailDto: CreateEmailDto) {
         return this.transporter.sendMail({
-            from: `"B-Leave" <${this.configService.get<string>('MAIL_USER')}>`,
+            from: `"No Reply" <${this.configService.get<string>('MAIL_USER')}>`,
             to: createEmailDto.to,
             subject: createEmailDto.subject,
             text: createEmailDto.text,
